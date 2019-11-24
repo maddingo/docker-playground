@@ -1,0 +1,87 @@
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "plantuml",
+    "namespace": "default",
+    "selfLink": "/apis/extensions/v1beta1/namespaces/default/deployments/plantuml",
+    "uid": "28f5c8c6-cf96-4979-9f7a-1b0ccdcc0e06",
+    "resourceVersion": "4388",
+    "generation": 4,
+    "creationTimestamp": "2019-10-25T21:04:31Z",
+    "labels": {
+      "app": "plantuml"
+    },
+    "annotations": {
+      "deployment.kubernetes.io/revision": "1"
+    }
+  },
+  "spec": {
+    "replicas": 2,
+    "selector": {
+      "matchLabels": {
+        "app": "plantuml"
+      }
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "app": "plantuml"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "plantuml-server",
+            "image": "plantuml/plantuml-server:tomcat",
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "securityContext": {},
+        "schedulerName": "default-scheduler"
+      }
+    },
+    "strategy": {
+      "type": "RollingUpdate",
+      "rollingUpdate": {
+        "maxUnavailable": "25%",
+        "maxSurge": "25%"
+      }
+    },
+    "revisionHistoryLimit": 10,
+    "progressDeadlineSeconds": 600
+  },
+  "status": {
+    "observedGeneration": 4,
+    "replicas": 2,
+    "updatedReplicas": 2,
+    "readyReplicas": 2,
+    "availableReplicas": 2,
+    "conditions": [
+      {
+        "type": "Progressing",
+        "status": "True",
+        "lastUpdateTime": "2019-10-25T21:08:01Z",
+        "lastTransitionTime": "2019-10-25T21:04:31Z",
+        "reason": "NewReplicaSetAvailable",
+        "message": "ReplicaSet \"plantuml-7ff9b9d4c8\" has successfully progressed."
+      },
+      {
+        "type": "Available",
+        "status": "True",
+        "lastUpdateTime": "2019-10-25T21:39:09Z",
+        "lastTransitionTime": "2019-10-25T21:39:09Z",
+        "reason": "MinimumReplicasAvailable",
+        "message": "Deployment has minimum availability."
+      }
+    ]
+  }
+}
+

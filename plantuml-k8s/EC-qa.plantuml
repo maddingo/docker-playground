@@ -1,0 +1,13 @@
+@startuml
+cloud QA-vpc {
+  node controller
+  node Yellowfin
+}
+
+cloud Default-VPC {
+  node nexus
+}
+
+nexus -> controller
+
+@enduml

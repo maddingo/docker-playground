@@ -1,0 +1,41 @@
+version: "3.3"
+
+services:
+
+  traefik:
+    image: "traefik:v2.0"
+    container_name: "traefik"
+    command:
+      - "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
+  whoami:
+    image: "containous/whoami:v1.4.0"
+    container_name: "whomami-service"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.priority=10"
+      - "traefik.http.routers.whoami.rule=PathPrefix(`/wh`)"
+      - "traefik.http.middlewares.remove-prefix-wh.stripprefix.prefixes=/wh"
+      - "traefik.http.middlewares.remove-prefix-wh.stripprefix.forceslash=true"
+      - "traefik.http.routers.whoami.middlewares=remove-prefix-wh"
+      - "traefik.http.routers.whoami.entrypoints=web"
+
+  plantuml:
+    image: plantuml/plantuml-server:tomcat
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.plantuml.priority=5"
+      - "traefik.http.services.plantuml.loadbalancer.server.port=8080"
+      - "traefik.http.routers.plantuml.rule=PathPrefix(`/`)"
+      - "traefik.http.routers.plantuml.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=test:$$apr1$$JI9Ie4xt$$fDAaIppkYWhAgAoiIcZI3."
+      - "traefik.http.routers.plantuml.entrypoints=web"
