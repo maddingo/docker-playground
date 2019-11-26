@@ -11,9 +11,11 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
+      - "--entrypoints.reveal.address=:1948"
     ports:
       - "80:80"
       - "8080:8080"
+      - "1948:1948"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 
@@ -39,3 +41,14 @@ services:
       - "traefik.http.routers.plantuml.middlewares=auth"
       - "traefik.http.middlewares.auth.basicauth.users=test:$$apr1$$JI9Ie4xt$$fDAaIppkYWhAgAoiIcZI3."
       - "traefik.http.routers.plantuml.entrypoints=web"
+
+  reveal:
+    image: webpronl/reveal-md:latest
+    container_name: "reveal-md"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.reveal.loadbalancer.server.port=1948"
+      - "traefik.http.routers.reveal.rule=PathPrefix(`/`)"
+      - "traefik.http.routers.reveal.entrypoints=reveal"
+    volumes:
+      - "./slides:/slides"
