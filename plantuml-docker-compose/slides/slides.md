@@ -1,11 +1,61 @@
-# Traefik Proxy
+Developer Installation
+
+[![UML](http://localhost/svg/oyjFILL8JKuiA528vk9qTLPmB2ZWKW02NLrTCEsTMfcSav-OZI88LESKuCiLoyML1z9VcGRI79cQavDVdfQP1nTN0gfpSL9IgERYJ4aiIKnAB4Q89HO3hKr9ughbuWAQNvgYa5IKNrwSMWGooGd219a34zNLjOCwqqh18oGa04K2Q3zK5A84eXXeE502nWO0)](http://localhost/uml/oyjFILL8JKuiA528vk9qTLPmB2ZWKW02NLrTCEsTMfcSav-OZI88LESKuCiLoyML1z9VcGRI79cQavDVdfQP1nTN0gfpSL9IgERYJ4aiIKnAB4Q89HO3hKr9ughbuWAQNvgYa5IKNrwSMWGooGd219a34zNLjOCwqqh18oGa04K2Q3zK5A84eXXeE502nWO0)
+----
+Secure On Premise Installation I
+
+[![UML](http://localhost/svg/VOz12i8m44NNdLFC1OBeqaN1j88WGg7TYBX8cnHAOnBIQkdjJM9JT6Csy_F_v4r6QIvGDCoOBTuWEOkvaPhrWEuGGdo1v9ZXmHZSe1EqkCGmr5m_MASmw4ohqMefXOKxW5hHEu_-1w6iwONYGPV2lhu0S-iVNuMKUcexvNtEHbQpmSDvlQ1pwXDmdtzohAsU1c5zH3_IXz4b94tZodiyLLLH_cPkPFHXwND-c0RBFklTzKRz1W00)](http://localhost/uml/VOz12i8m44NNdLFC1OBeqaN1j88WGg7TYBX8cnHAOnBIQkdjJM9JT6Csy_F_v4r6QIvGDCoOBTuWEOkvaPhrWEuGGdo1v9ZXmHZSe1EqkCGmr5m_MASmw4ohqMefXOKxW5hHEu_-1w6iwONYGPV2lhu0S-iVNuMKUcexvNtEHbQpmSDvlQ1pwXDmdtzohAsU1c5zH3_IXz4b94tZodiyLLLH_cPkPFHXwND-c0RBFklTzKRz1W00)
+
+----
+Secure On Premise Installation II
+
+[![UML](http://localhost/svg/dP312i8m38RFvYdo0aLqEtaGd0g22iAyY7Z8rWfYRSUc3j_UfdReH0JjfN--F_bROgnKg78gYXvkeJDNjrnREWAw8uJW2phJCOwA0hleHB9QDgQ_9_P41uDUZwqvbrPhLS8Em72qpZXsOKdwZeGqcVp5zq_tkUVR8wccgshFH7_CnB_DtFRSlr5Qstf_CCmbdIcZYlDa5j8c2JjkRHU9MMdhIfNi90_9NaE560vv8mEShTUh59pqAEp_WTkq_v56xzHzDH08OGxxJqA8QTVHMnq_QnVLw3i0)](http://localhost/uml/dP312i8m38RFvYdo0aLqEtaGd0g22iAyY7Z8rWfYRSUc3j_UfdReH0JjfN--F_bROgnKg78gYXvkeJDNjrnREWAw8uJW2phJCOwA0hleHB9QDgQ_9_P41uDUZwqvbrPhLS8Em72qpZXsOKdwZeGqcVp5zq_tkUVR8wccgshFH7_CnB_DtFRSlr5Qstf_CCmbdIcZYlDa5j8c2JjkRHU9MMdhIfNi90_9NaE560vv8mEShTUh59pqAEp_WTkq_v56xzHzDH08OGxxJqA8QTVHMnq_QnVLw3i0)
+
+----
+AWS Installation
+
+[![UML](http://localhost/svg/bP1D2y8m38RFvbS4xqLqDm-3RGg22eE98kAXspeGwphcnnZYVxVfEcKYWhtapPFcRPf4gckAVMyJuJeC-dW7o5KgK2IyA8QuWzvSr8bK_0Ye3sEC0lIc0Nf5WGFKmW-NRT74YJhnGuv61og_b4fAKSBUMikORBs5_oBciH7HNxQHv3VHxN7-wwapkhyLKgegE-J4KtxXCJ-JNnfRjmbDze34h2OkLNKM9PNyHb9RInbpNVhG66UhLHY1bWRPzJMuIqTVgVD9zQoMW3NJs4m9rgQRE-zSjxRw2G00)](http://localhost/uml/bP1D2y8m38RFvbS4xqLqDm-3RGg22eE98kAXspeGwphcnnZYVxVfEcKYWhtapPFcRPf4gckAVMyJuJeC-dW7o5KgK2IyA8QuWzvSr8bK_0Ye3sEC0lIc0Nf5WGFKmW-NRT74YJhnGuv61og_b4fAKSBUMikORBs5_oBciH7HNxQHv3VHxN7-wwapkhyLKgegE-J4KtxXCJ-JNnfRjmbDze34h2OkLNKM9PNyHb9RInbpNVhG66UhLHY1bWRPzJMuIqTVgVD9zQoMW3NJs4m9rgQRE-zSjxRw2G00)
+
+----
+
+Docker Compose
+
+[![UML](http://localhost/svg/fP1V2u8m5CMVswUux7r4-jP3e1O45GX64T73d1EavKJxWqJVlQjEnGXwQ2-Uyziyzsn2wLi4rDa7iFCz2az2058TIP22Pza4ZkYhjPAbK9gVZMMCLH_Z5XuuMGRZIhZ-fZzZr5nVU9AsfpsTNdEjbCmHdBg1r5cx57W1AXoMiBeIl-O4Yj_b8BGEiFy8e0Ufb7x4ILftA-Dg9-9N7l82Tp5dthIM8Wh9YuZwGSDSFmgPuzoHsqY2aIrbR3R3My8Kbjkj7n2KDJ9Ftk0XjRvI-vEMSKk82KFSL3CnGs_t7dzjzHi0)](http://localhost/uml/fP1V2u8m5CMVswUux7r4-jP3e1O45GX64T73d1EavKJxWqJVlQjEnGXwQ2-Uyziyzsn2wLi4rDa7iFCz2az2058TIP22Pza4ZkYhjPAbK9gVZMMCLH_Z5XuuMGRZIhZ-fZzZr5nVU9AsfpsTNdEjbCmHdBg1r5cx57W1AXoMiBeIl-O4Yj_b8BGEiFy8e0Ufb7x4ILftA-Dg9-9N7l82Tp5dthIM8Wh9YuZwGSDSFmgPuzoHsqY2aIrbR3R3My8Kbjkj7n2KDJ9Ftk0XjRvI-vEMSKk82KFSL3CnGs_t7dzjzHi0)
+
+
+----
+
+Docker Compose (final)
+[![UML](http://localhost/svg/TP1DQm8n48RFdLynxDr3FVOW6BTGi8AWbr8zJ3vMP6CITbTaaVxtpcQpkbeQSfWy3tbdaigeXjp16inohqfJuSAVWgzDXbS0HESrg_S5paF8a6eqYa9ulQkbQPNrL4PPghluzAHtJf0bfqmLjPN_HquVb5YlafBXDEhsPQprb-BeecsByQLSyEokeQFhsbtPT4jJGvBgFZONALLBrZy0l7dwiqPP-KlDh_-65z6Ni0SOw6Goc_7q-8OVs-rw0rn6r7z6mezq-fTsJtccRV5CIZKGIF6C-v5JyEWS8szd3hlL73FKlm00)](http://localhost/uml/TP1DQm8n48RFdLynxDr3FVOW6BTGi8AWbr8zJ3vMP6CITbTaaVxtpcQpkbeQSfWy3tbdaigeXjp16inohqfJuSAVWgzDXbS0HESrg_S5paF8a6eqYa9ulQkbQPNrL4PPghluzAHtJf0bfqmLjPN_HquVb5YlafBXDEhsPQprb-BeecsByQLSyEokeQFhsbtPT4jJGvBgFZONALLBrZy0l7dwiqPP-KlDh_-65z6Ni0SOw6Goc_7q-8OVs-rw0rn6r7z6mezq-fTsJtccRV5CIZKGIF6C-v5JyEWS8szd3hlL73FKlm00)
+
+---
+## Software Proxies
+
+* HAProxy
+* Nginx
+* Envoy
+* Traefik
+* *Ref: https://www.loggly.com/blog/benchmarking-5-popular-load-balancers-nginx-haproxy-envoy-traefik-and-alb/*
+---
+## Traefik Proxy
 
 * easier to set up than haproxy
 * provider for docker
 * low footprint
+* useable as Kubernetes Ingress Controller
+* nice defaults
+* supports Let's Encrypt out of the box
 
 ---
 
-# Architecture
+## Requirements for local Dev Environment
+* Load Balancer
+* SSL/TLS
+* easy Certificate Setup
+* few modifications necessary
+* Windows, Linux
+* Usable in CI pipeline
+* Container-based
 
-![UML](http://localhost/svg/oyjFILKeAKfCJSlCLeZcuWo1CBbYkRZoG585EObv9QMvEI0v69ih5W00)
+---
+Walk-through of https://bitbucket.org/ecfrmw/ec-docker-compose
