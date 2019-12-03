@@ -1,11 +1,20 @@
 Developer Installation
 
 [![UML](http://localhost/svg/oyjFILL8JKuiA528vk9qTLPmB2ZWKW02NLrTCEsTMfcSav-OZI88LESKuCiLoyML1z9VcGRI79cQavDVdfQP1nTN0gfpSL9IgERYJ4aiIKnAB4Q89HO3hKr9ughbuWAQNvgYa5IKNrwSMWGooGd219a34zNLjOCwqqh18oGa04K2Q3zK5A84eXXeE502nWO0)](http://localhost/uml/oyjFILL8JKuiA528vk9qTLPmB2ZWKW02NLrTCEsTMfcSav-OZI88LESKuCiLoyML1z9VcGRI79cQavDVdfQP1nTN0gfpSL9IgERYJ4aiIKnAB4Q89HO3hKr9ughbuWAQNvgYa5IKNrwSMWGooGd219a34zNLjOCwqqh18oGa04K2Q3zK5A84eXXeE502nWO0)
+
+----
+Installation (From Installation Guide)
+![Simple installation](http://ecpedia.eu.tieto.com/rest/gliffy/1.0/embeddedDiagrams/44d5f37b-562c-4615-97cc-1da9f6cc0296.png)
+
 ----
 Secure On Premise Installation I
 
 [![UML](http://localhost/svg/VOz12i8m44NNdLFC1OBeqaN1j88WGg7TYBX8cnHAOnBIQkdjJM9JT6Csy_F_v4r6QIvGDCoOBTuWEOkvaPhrWEuGGdo1v9ZXmHZSe1EqkCGmr5m_MASmw4ohqMefXOKxW5hHEu_-1w6iwONYGPV2lhu0S-iVNuMKUcexvNtEHbQpmSDvlQ1pwXDmdtzohAsU1c5zH3_IXz4b94tZodiyLLLH_cPkPFHXwND-c0RBFklTzKRz1W00)](http://localhost/uml/VOz12i8m44NNdLFC1OBeqaN1j88WGg7TYBX8cnHAOnBIQkdjJM9JT6Csy_F_v4r6QIvGDCoOBTuWEOkvaPhrWEuGGdo1v9ZXmHZSe1EqkCGmr5m_MASmw4ohqMefXOKxW5hHEu_-1w6iwONYGPV2lhu0S-iVNuMKUcexvNtEHbQpmSDvlQ1pwXDmdtzohAsU1c5zH3_IXz4b94tZodiyLLLH_cPkPFHXwND-c0RBFklTzKRz1W00)
 
+----
+Cluster (from Installation Guide)
+
+![Cluster Installation](http://ecpedia.eu.tieto.com/rest/gliffy/1.0/embeddedDiagrams/49069268-8741-4386-99a4-4a64fe502105.png)
 ----
 Secure On Premise Installation II
 
