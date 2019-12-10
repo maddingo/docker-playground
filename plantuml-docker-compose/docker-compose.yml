@@ -7,28 +7,16 @@ services:
     container_name: "traefik"
     command:
       - "--log.level=error"
-      - "--api.insecure=true"
+#      - "--api.insecure=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.reveal.address=:1948"
+      - "--entrypoints.web.address=:8080"
+#      - "--entrypoints.reveal.address=:1948"
     ports:
-      - "80:80"
+#      - "80:80"
       - "8080:8080"
-      - "1948:1948"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-
-  whoami:
-    image: "maddingo/whoami"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.whoami.priority=10"
-      - "traefik.http.routers.whoami.rule=PathPrefix(`/wh`)"
-      - "traefik.http.middlewares.remove-prefix-wh.stripprefix.prefixes=/wh"
-      - "traefik.http.middlewares.remove-prefix-wh.stripprefix.forceslash=true"
-      - "traefik.http.routers.whoami.middlewares=remove-prefix-wh"
-      - "traefik.http.routers.whoami.entrypoints=web"
 
   plantuml:
     image: plantuml/plantuml-server:tomcat
@@ -44,7 +32,7 @@ services:
   reveal:
     image: webpronl/reveal-md:latest
     command:
-        - "/slides/slides.md"
+        - "/slides/"
         - "--theme white"
         - "-w"
     labels:
