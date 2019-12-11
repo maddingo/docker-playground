@@ -20,6 +20,11 @@
 - Network traffic shaping
 - OPC server that can be automated
 - Environments of old versions
+- Download of files from browser (log files, reports etc.)
+- Integration tests for non-selenium tests
+    - conventions for parameters
+    - infrastructure (where in the Jenkins pipeline, how to provision)
+
 ---
 ## ECPT-1234
 
