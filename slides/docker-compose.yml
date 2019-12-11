@@ -1,0 +1,45 @@
+version: "3.3"
+
+services:
+
+  traefik:
+    image: "traefik:v2.0"
+    container_name: "traefik"
+    command:
+      - "--log.level=error"
+#      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:8080"
+#      - "--entrypoints.reveal.address=:1948"
+    ports:
+#      - "80:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
+  plantuml:
+    image: plantuml/plantuml-server:tomcat
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.plantuml.priority=5"
+      - "traefik.http.services.plantuml.loadbalancer.server.port=8080"
+      - "traefik.http.routers.plantuml.rule=PathPrefix(`/uml`) || PathPrefix(`/svg`) || PathPrefix(`/png`) || PathPrefix(`/form`)"
+#      - "traefik.http.routers.plantuml.middlewares=auth"
+#      - "traefik.http.middlewares.auth.basicauth.users=test:$$apr1$$JI9Ie4xt$$fDAaIppkYWhAgAoiIcZI3."
+      - "traefik.http.routers.plantuml.entrypoints=web"
+
+  reveal:
+    image: webpronl/reveal-md:latest
+    command:
+        - "/slides/"
+        - "--theme white"
+        - "-w"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.reveal.loadbalancer.server.port=1948"
+      - "traefik.http.routers.reveal.rule=PathPrefix(`/`)"
+      - "traefik.http.routers.reveal.priority=1"
+      - "traefik.http.routers.reveal.entrypoints=web"
+    volumes:
+      - "./slides:/slides"
