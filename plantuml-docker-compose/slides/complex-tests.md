@@ -22,6 +22,13 @@
 - Environments of old versions
 - Download of files from browser (log files, reports etc.)
 - Mail server
+- Error injection
+---
+### Missing Pieces (contd.)
+- cluster env for each team for sprint demo
+- PI server  that can be automated
+- performance testing
+- several browsers for ui testing
 ---
 ### Integration tests for non-selenium tests
 - conventions for parameters
