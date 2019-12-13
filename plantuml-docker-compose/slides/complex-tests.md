@@ -21,11 +21,13 @@
 - OPC server that can be automated
 - Environments of old versions
 - Download of files from browser (log files, reports etc.)
-- Integration tests for non-selenium tests
-    - conventions for parameters
-    - infrastructure (where in the Jenkins pipeline, how to provision)
+- Mail server
+---
+### Integration tests for non-selenium tests
+- conventions for parameters
+- infrastructure
 
 ---
-## ECPT-1234
+## ECPT-4091
 
-[![UML](http://localhost:8080/svg/LOmn3iCW34Ltdy8ZkK8wTEmbAY4BdCGIDHIxaUZfmzYE__sdPqxT0MJ3yEZKZbE-A6fEfN2-B-W7AuR1jW3YsdfDR8RpVMeMsZkzx0PSZ35e_NEgbZ5tZCRl3slY694qJq39vHGV4_mqPcy3CA_j0W00)](http://localhost:8080/uml/LOmn3iCW34Ltdy8ZkK8wTEmbAY4BdCGIDHIxaUZfmzYE__sdPqxT0MJ3yEZKZbE-A6fEfN2-B-W7AuR1jW3YsdfDR8RpVMeMsZkzx0PSZ35e_NEgbZ5tZCRl3slY694qJq39vHGV4_mqPcy3CAyDBW00)
+[![UML](http://localhost:8080/svg/dP2nQiD038PtFuN6n10JoEOCfKrJQCbGwj1GyABuTFQLisJkv9YyVUsGKDgjdJH8-lJzYef1aoGlIA7l066xWShtKIcKF3Xj01KyOLJGGO35K5mdYRCmAyxZL0klGJeAUeQIAsapgZ8Rsc6iBcQFgBWFoD5IsBuyP5TouRZsfC8bHzAxEMX333EMUG9mKVd5_WTwdH0RPyTe1tGALW9ugS4xff8FJxkFpQvuNowNgnpIT8h5s5AQvbGj8eKJXKM3G9ug9GCO9qM8DpXqGKxEK02nbuw4EXkSDzQVC_eyhcuwPBBlfOdhAXhVbx_r38hr4UD8TsqdGQ_ltcDzRx0RTv_tqsJHz0f61hxScKH_-Fu95bMwBm00)](http://localhost:8080/uml/dP2nQiD038PtFuN6n10JoEOCfKrJQCbGwj1GyABuTFQLisJkv9YyVUsGKDgjdJH8-lJzYef1aoGlIA7l066xWShtKIcKF3Xj01KyOLJGGO35K5mdYRCmAyxZL0klGJeAUeQIAsapgZ8Rsc6iBcQFgBWFoD5IsBuyP5TouRZsfC8bHzAxEMX333EMUG9mKVd5_WTwdH0RPyTe1tGALW9ugS4xff8FJxkFpQvuNowNgnpIT8h5s5AQvbGj8eKJXKM3G9ug9GCO9qM8DpXqGKxEK02nbuw4EXkSDzQVC_eyhcuwPBBlfOdhAXhVbx_r38hr4UD8TsqdGQ_ltcDzRx0RTv_tqsJHz0f61hxScKH_-Fu95bMwBm00)
