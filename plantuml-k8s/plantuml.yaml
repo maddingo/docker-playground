@@ -5,7 +5,7 @@ metadata:
   labels:
     app: plantuml
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: plantuml
@@ -32,3 +32,20 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
+
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: "plantuml"
+  namespace: production
+
+spec:
+  rules:
+    - host: martin-xps.local
+      http:
+        paths:
+          - path: /uml
+            backend:
+              serviceName: plantuml-service
+              servicePort: 80
