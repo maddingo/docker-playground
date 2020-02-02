@@ -5,7 +5,7 @@ provider "aws" {
 
 resource "aws_eks_cluster" "plantuml" {
   name     = "plantuml"
-  role_arn = "${aws_iam_role.plantuml.arn}"
+  role_arn = aws_iam_role.plantuml.arn
 
   vpc_config {
     subnet_ids = data.aws_subnet_ids.plantuml.ids
