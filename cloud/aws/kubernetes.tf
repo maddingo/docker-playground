@@ -40,9 +40,6 @@ resource "kubernetes_deployment" "plantuml" {
         container {
           image = "plantuml/plantuml-server:tomcat"
           name  = "plantuml"
-          ports = {
-            container_port = 8080
-          }
 
           resources {
             limits {
@@ -107,7 +104,7 @@ resource "kubernetes_ingress" "plantuml" {
             service_port = 80
           }
 
-          path = ["/uml/*", "/svg/*"]
+          path = "/uml/*"
         }
       }
     }
