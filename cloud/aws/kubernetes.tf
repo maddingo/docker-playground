@@ -80,7 +80,7 @@ resource "kubernetes_service" "plantuml" {
     selector = {
       app = kubernetes_deployment.plantuml.metadata.0.labels.app
     }
-    session_affinity = "ClientIP"
+    #session_affinity = "ClientIP"
     port {
       port        = 8080
       target_port = 80
