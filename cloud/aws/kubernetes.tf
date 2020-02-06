@@ -77,11 +77,11 @@ resource "kubernetes_service" "plantuml" {
     }
     #session_affinity = "ClientIP"
     port {
-      port        = 8080
-      target_port = 80
+      port        = 443
+      target_port = 8080
     }
 
-    type = "LoadBalancer"
+    type = "ClusterIP"
   }
 }
 
@@ -96,7 +96,7 @@ resource "kubernetes_ingress" "plantuml" {
         path {
           backend {
             service_name = "plantuml"
-            service_port = 80
+            service_port = 8080
           }
 
           path = "/uml/*"
