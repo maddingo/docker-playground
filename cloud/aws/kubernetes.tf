@@ -56,14 +56,9 @@ resource "kubernetes_deployment" "plantuml" {
             http_get {
               path = "/"
               port = 8080
-
-              http_header {
-                name  = "X-Custom-Header"
-                value = "Awesome"
-              }
             }
 
-            initial_delay_seconds = 3
+            initial_delay_seconds = 10
             period_seconds        = 3
           }
         }
