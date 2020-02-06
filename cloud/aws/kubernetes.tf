@@ -76,10 +76,10 @@ resource "kubernetes_service" "plantuml" {
       app = kubernetes_deployment.plantuml.metadata.0.labels.app
     }
     #session_affinity = "ClientIP"
-    port {
-      port        = 443
-      target_port = 8080
-    }
+    #port {
+    #  port        = 443
+    #  target_port = 8080
+    #}
 
     type = "ClusterIP"
   }
