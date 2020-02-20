@@ -55,3 +55,12 @@ resource "aws_eks_node_group" "plantuml" {
     aws_iam_role_policy_attachment.plantuml-AmazonEC2ContainerRegistryReadOnly,
   ]
 }
+
+resource "aws_acm_certificate" "cert" {
+  domain_name       = "maddin.cloud"
+  validation_method = "DNS"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}

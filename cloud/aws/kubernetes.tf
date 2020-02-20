@@ -38,7 +38,7 @@ resource "kubernetes_deployment" "plantuml" {
 
       spec {
         container {
-          image = "plantuml/plantuml-server:tomcat"
+          image = "maddingo/plantuml-server"
           name  = "plantuml"
 
           resources {
@@ -54,7 +54,7 @@ resource "kubernetes_deployment" "plantuml" {
 
           liveness_probe {
             http_get {
-              path = "/"
+              path = "/plantuml"
               port = 8080
             }
 
@@ -73,21 +73,29 @@ resource "kubernetes_service" "plantuml" {
   }
   spec {
     selector = {
-      app = kubernetes_deployment.plantuml.metadata.0.labels.app
+      app = "plantuml"
     }
     #session_affinity = "ClientIP"
-    #port {
-    #  port        = 443
-    #  target_port = 8080
-    #}
+    port {
+      port        = 80
+      target_port = 8080
+      protocol = "TCP"
+    }
 
-    type = "ClusterIP"
+    type = "NodePort"
   }
 }
 
 resource "kubernetes_ingress" "plantuml" {
   metadata {
     name = "plantuml"
+    annotations = {
+      kubernetes.io/ingress.class = "alb"
+      alb.ingress.kubernetes.io/scheme = "internet-facing"
+      alb.ingress.kubernetes.io/listen-ports =  '[{"HTTP": 80}, {"HTTPS":443}]'
+      alb.ingress.kubernetes.io/group = "plantuml"
+      alb.ingress.kubernetes.io/certificate-arn: aws_acm_certificate.cert.arn
+    }
   }
 
   spec {
@@ -96,16 +104,12 @@ resource "kubernetes_ingress" "plantuml" {
         path {
           backend {
             service_name = "plantuml"
-            service_port = 8080
+            service_port = 80
           }
 
-          path = "/uml/*"
+          path = "/plantuml/*"
         }
       }
-    }
-
-    tls {
-      secret_name = "tls-secret"
     }
   }
 }

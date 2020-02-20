@@ -1,7 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: plantuml
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: plantuml-deployment
+  name: plantuml
+  namespace: plantuml
   labels:
     app: plantuml
 spec:
@@ -24,7 +31,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: plantuml-service
+  name: plantuml
+  namespace: plantuml
 spec:
   selector:
     app: plantuml
@@ -38,7 +46,7 @@ kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
   name: "plantuml"
-  namespace: production
+  namespace: plantuml
 
 spec:
   rules:
@@ -47,5 +55,5 @@ spec:
         paths:
           - path: /uml
             backend:
-              serviceName: plantuml-service
+              serviceName: plantuml
               servicePort: 80
