@@ -5,5 +5,5 @@ provider "aws" {
 
 
 data "aws_eks_cluster_auth" "plantuml" {
-  name = aws_eks_cluster.plantuml.name
+  name = "plantuml"
 }
