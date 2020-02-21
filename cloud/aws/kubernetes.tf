@@ -113,4 +113,3 @@ resource "kubernetes_ingress" "plantuml" {
     }
   }
 }
-\
