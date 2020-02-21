@@ -90,11 +90,11 @@ resource "kubernetes_ingress" "plantuml" {
   metadata {
     name = "plantuml"
     annotations = {
-      kubernetes.io/ingress.class = "alb"
-      alb.ingress.kubernetes.io/scheme = "internet-facing"
-      alb.ingress.kubernetes.io/listen-ports =  [{"HTTP": 80}, {"HTTPS":443}]
-      alb.ingress.kubernetes.io/group = "plantuml"
-      alb.ingress.kubernetes.io/certificate-arn = aws_acm_certificate.cert.arn
+      "kubernetes.io/ingress.class" = "alb"
+      "alb.ingress.kubernetes.io/scheme" = "internet-facing"
+      "alb.ingress.kubernetes.io/listen-ports" =  [{"HTTP": 80}, {"HTTPS":443}]
+      "alb.ingress.kubernetes.io/group" = "plantuml"
+      "alb.ingress.kubernetes.io/certificate-arn" = aws_acm_certificate.cert.arn
     }
   }
 
