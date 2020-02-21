@@ -1,8 +1,12 @@
 provider "kubernetes" {
   host = aws_eks_cluster.plantuml.endpoint
-  cluster_ca_certificate = base64decode(aws_eks_cluster.plantuml.certificate_authority.0.data)
+  cluster_ca_certificate = base64decode(data.aws_eks_cluster.plantuml.certificate_authority.0.data)
   token                  = data.aws_eks_cluster_auth.plantuml.token
   load_config_file       = false
+}
+
+data "aws_eks_cluster" "example" {
+  name = "plantuml"
 }
 
 resource "kubernetes_namespace" "plantuml" {
