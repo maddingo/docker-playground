@@ -7,7 +7,7 @@
 
 locals {
   domain_name = var.domain_name
-  subnet_ids = [aws_subnet.cluster.*.id]
+  subnet_ids = [aws_subnet.cluster.id]
 }
 
 resource "aws_vpc" "cluster" {
