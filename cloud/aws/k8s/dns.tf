@@ -3,11 +3,11 @@ data "aws_route53_zone" "public" {
   private_zone = false
 }
 
-# resource "aws_route53_record" "plantuml" {
-#   zone_id = data.aws_route53_zone.public.zone_id
-#   name    = "plantuml"
-#   type    = "A"
-#   ttl     = 300
-#
-#   records = [kubernetes_service.plantuml.load_balancer_ip]
-# }
+resource "aws_route53_record" "plantuml" {
+  zone_id = data.aws_route53_zone.public.zone_id
+  name    = "plantuml"
+  type    = "A"
+  ttl     = 300
+
+  records = [kubernetes_service.nginx.load_balancer_ingress.ip]
+}

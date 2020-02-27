@@ -87,8 +87,4 @@ resource "kubernetes_service" "plantuml" {
 
     type = "LoadBalancer"
   }
-
-  load_balancer_ingress {
-    hostname = "plantuml.${var.domain_name}"
-  }
 }
