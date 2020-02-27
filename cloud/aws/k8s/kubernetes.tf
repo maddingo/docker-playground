@@ -69,7 +69,11 @@ resource "kubernetes_deployment" "plantuml" {
 resource "kubernetes_service" "plantuml" {
   metadata {
     name = "plantuml"
+    annotations = {
+      "service.beta.kubernetes.io/aws-load-balancer-ssl-cert": data.aws_acm_certificate.cert.arn
+    }
   }
+
   spec {
     selector = {
       app = "plantuml"
@@ -79,10 +83,6 @@ resource "kubernetes_service" "plantuml" {
       port        = 443
       target_port = 8080
       protocol = "TCP"
-    }
-
-    annotations = {
-      service.beta.kubernetes.io/aws-load-balancer-ssl-cert: data.aws_acm_certificate.cert.arn
     }
 
     type = "LoadBalancer"
