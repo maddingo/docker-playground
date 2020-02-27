@@ -9,8 +9,8 @@ data "aws_route53_zone" "public" {
 }
 
 resource "aws_route53_record" "plantuml" {
-  zone_id = "${aws_route53_zone.public.zone_id}"
-  name    = "plantuml.${var.domain_name}"
+  zone_id = data.aws_route53_zone.public.zone_id
+  name    = "plantuml"
   type    = "CNAME"
 
   records = [kubernetes_service.plantuml.external_name]
