@@ -1,8 +1,3 @@
-provider "aws" {
-  region = "eu-central-1"
-  version = "~> 2.7"
-}
-
 data "aws_route53_zone" "public" {
   name         = "${var.domain_name}."
   private_zone = false
