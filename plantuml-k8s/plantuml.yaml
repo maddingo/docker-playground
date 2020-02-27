@@ -33,13 +33,16 @@ kind: Service
 metadata:
   name: plantuml
   namespace: plantuml
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:eu-central-1:972842949248:certificate/b1f96b78-d292-4d9f-8c92-82854f418109
 spec:
   selector:
     app: plantuml
   ports:
     - protocol: TCP
-      port: 80
+      port: 443
       targetPort: 8080
+  type: LoadBalancer
 
 ---
 kind: Ingress
@@ -50,10 +53,10 @@ metadata:
 
 spec:
   rules:
-    - host: martin-xps.local
+    - host: plantuml.maddin.cloud
       http:
         paths:
-          - path: /uml
+          - path: /*
             backend:
               serviceName: plantuml
-              servicePort: 80
+              servicePort: 443

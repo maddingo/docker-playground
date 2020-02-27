@@ -76,40 +76,15 @@ resource "kubernetes_service" "plantuml" {
     }
     #session_affinity = "ClientIP"
     port {
-      port        = 80
+      port        = 443
       target_port = 8080
       protocol = "TCP"
     }
 
-    type = "NodePort"
-  }
-}
-
-resource "kubernetes_ingress" "plantuml" {
-  metadata {
-    name = "plantuml"
     annotations = {
-      "kubernetes.io/ingress.class" = "alb"
-      "alb.ingress.kubernetes.io/target-type"= "instance"
-      "alb.ingress.kubernetes.io/scheme" = "internet-facing"
-      "alb.ingress.kubernetes.io/listen-ports" =  "[{\"HTTP\": 80}, {\"HTTPS\":443}]"
-      "alb.ingress.kubernetes.io/group" = "plantuml"
-      "alb.ingress.kubernetes.io/certificate-arn" = data.aws_acm_certificate.cert.arn
+      service.beta.kubernetes.io/aws-load-balancer-ssl-cert: data.aws_acm_certificate.cert.arn
     }
-  }
 
-  spec {
-    rule {
-      http {
-        path {
-          backend {
-            service_name = "plantuml"
-            service_port = 80
-          }
-
-          path = "/plantuml/*"
-        }
-      }
-    }
+    type = "LoadBalancer"
   }
 }
