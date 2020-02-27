@@ -7,7 +7,7 @@
 
 resource "aws_vpc" "plantumlcluster" {
   cidr_block = "10.0.0.0/16"
-  tags {
+  tags = {
       "kubernetes.io/cluster/plantuml": "shared"
   }
 }
