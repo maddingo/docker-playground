@@ -39,7 +39,7 @@ resource "aws_eks_node_group" "plantuml" {
   cluster_name    = aws_eks_cluster.plantuml.name
   node_group_name = "plantuml"
   node_role_arn   = aws_iam_role.plantuml.arn
-  subnet_ids      = data.aws_subnet_ids.plantuml.ids
+  subnet_ids      = local.subnet_ids
 
   scaling_config {
     desired_size = 1
