@@ -37,7 +37,7 @@ resource "kubernetes_deployment" "plantuml" {
 
       spec {
         container {
-          image = "plantuml/plantuml-server"
+          image = "maddingo/plantuml-server"
           name  = "plantuml"
 
           resources {
@@ -53,7 +53,7 @@ resource "kubernetes_deployment" "plantuml" {
 
           liveness_probe {
             http_get {
-              path = "/"
+              path = "/plantuml"
               port = 8080
             }
 
