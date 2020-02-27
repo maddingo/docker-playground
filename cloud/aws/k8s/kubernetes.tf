@@ -71,6 +71,8 @@ resource "kubernetes_service" "plantuml" {
     name = "plantuml"
     annotations = {
       "service.beta.kubernetes.io/aws-load-balancer-ssl-cert": data.aws_acm_certificate.cert.arn
+      "service.beta.kubernetes.io/aws-load-balancer-backend-protocol": "http"
+      "service.beta.kubernetes.io/aws-load-balancer-ssl-ports": "https"
     }
   }
 
@@ -80,7 +82,14 @@ resource "kubernetes_service" "plantuml" {
     }
     #session_affinity = "ClientIP"
     port {
+      name = "https"
       port        = 443
+      target_port = 8080
+      protocol = "TCP"
+    }
+    port {
+      name = "http"
+      port        = 80
       target_port = 8080
       protocol = "TCP"
     }
