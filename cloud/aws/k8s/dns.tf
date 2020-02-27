@@ -9,5 +9,5 @@ resource "aws_route53_record" "plantuml" {
   type    = "A"
   ttl     = 300
 
-  records = [kubernetes_service.nginx.load_balancer_ingress.ip]
+  records = [kubernetes_service.plantuml.load_balancer_ingress.ip]
 }
