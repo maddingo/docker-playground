@@ -35,6 +35,7 @@ resource "aws_subnet" "cluster" {
     tags = {
       Name: "Subnet ${data.aws_availability_zones.available.names[count.index]}"
       "kubernetes.io/cluster/plantuml": "shared"
+      "kubernetes.io/role/elb": "1"
     }
 }
 
