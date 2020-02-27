@@ -46,6 +46,10 @@ resource "aws_route" "cluster_igw" {
   route_table_id = aws_vpc.cluster.default_route_table_id
   destination_cidr_block = "0.0.0.0/0"
   gateway_id = aws_internet_gateway.cluster_gw.id
+
+  tags = {
+    Name: "EKS Cluster RT"
+  }
 }
 
 resource "aws_route53_zone_association" "cluster_private" {
