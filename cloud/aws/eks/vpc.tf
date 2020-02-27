@@ -27,9 +27,9 @@ resource "aws_internet_gateway" "cluster_gw" {
 }
 
 resource "aws_subnet" "cluster" {
-    count = length(data.aws_availability_zones.available.names)}
+    count = length(data.aws_availability_zones.available.names)
     vpc_id     = aws_vpc.cluster.id
-    cidr_block = cidrsubnet("${aws_vpc.cluster.cidr_block}", 2, count.index )
+    cidr_block = cidrsubnet(aws_vpc.cluster.cidr_block, 2, count.index )
     availability_zone = data.aws_availability_zones.available.names[count.index]
 
     tags = {
