@@ -13,6 +13,6 @@ data "aws_eks_cluster" "plantuml" {
 }
 
 data "aws_acm_certificate" "cert" {
-  domain   = "maddin.cloud"
+  domain   = "*.${var.domain_name}"
   statuses = ["ISSUED"]
 }
