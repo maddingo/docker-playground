@@ -5,10 +5,6 @@ provider "kubernetes" {
   load_config_file       = false
 }
 
-data "aws_eks_cluster" "plantuml" {
-  name = "plantuml"
-}
-
 resource "kubernetes_namespace" "plantuml" {
   metadata {
     name = "plantuml"
@@ -97,7 +93,7 @@ resource "kubernetes_ingress" "plantuml" {
       "alb.ingress.kubernetes.io/scheme" = "internet-facing"
       "alb.ingress.kubernetes.io/listen-ports" =  "[{\"HTTP\": 80}, {\"HTTPS\":443}]"
       "alb.ingress.kubernetes.io/group" = "plantuml"
-      "alb.ingress.kubernetes.io/certificate-arn" = aws_acm_certificate.cert.arn
+      "alb.ingress.kubernetes.io/certificate-arn" = data.aws_acm_certificate.cert.arn
     }
   }
 

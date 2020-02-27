@@ -7,3 +7,12 @@ provider "aws" {
 data "aws_eks_cluster_auth" "plantuml" {
   name = "plantuml"
 }
+
+data "aws_eks_cluster" "plantuml" {
+  name = "plantuml"
+}
+
+data "aws_acm_certificate" "cert" {
+  domain   = "maddin.cloud"
+  statuses = ["ISSUED"]
+}
