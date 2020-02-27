@@ -5,7 +5,7 @@ provider "kubernetes" {
   load_config_file       = false
 }
 
-data "aws_eks_cluster" "example" {
+data "aws_eks_cluster" "plantuml" {
   name = "plantuml"
 }
 
