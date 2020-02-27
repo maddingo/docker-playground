@@ -21,7 +21,7 @@ resource "aws_vpc" "cluster" {
 resource "aws_internet_gateway" "cluster_gw" {
   vpc_id = aws_vpc.cluster.id
 
-  tags {
+  tags = {
     Name = "EKS cluster GW"
   }
 }
