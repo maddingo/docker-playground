@@ -50,7 +50,7 @@ resource "aws_route" "cluster_igw" {
 
 resource "aws_route53_zone_association" "cluster_private" {
   zone_id = data.aws_route53_zone.cluster_domain_private.id
-  vpc_id = aws_vpc.cluster_vpc.id
+  vpc_id = aws_vpc.cluster.id
 }
 
 data "aws_route53_zone" "cluster_domain_private" {
