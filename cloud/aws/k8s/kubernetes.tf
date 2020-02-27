@@ -90,6 +90,7 @@ resource "kubernetes_ingress" "plantuml" {
     name = "plantuml"
     annotations = {
       "kubernetes.io/ingress.class" = "alb"
+      "alb.ingress.kubernetes.io/target-type"= "instance"
       "alb.ingress.kubernetes.io/scheme" = "internet-facing"
       "alb.ingress.kubernetes.io/listen-ports" =  "[{\"HTTP\": 80}, {\"HTTPS\":443}]"
       "alb.ingress.kubernetes.io/group" = "plantuml"
