@@ -37,7 +37,8 @@ resource "kubernetes_deployment" "plantuml" {
 
       spec {
         container {
-          image = "maddingo/plantuml-server"
+          #image = "maddingo/plantuml-server"
+          image = "mendhak/http-https-echo"
           name  = "plantuml"
 
           resources {
@@ -53,8 +54,8 @@ resource "kubernetes_deployment" "plantuml" {
 
           liveness_probe {
             http_get {
-              path = "/plantuml"
-              port = 8080
+              path = "/"
+              port = 80
             }
 
             initial_delay_seconds = 10
@@ -84,7 +85,7 @@ resource "kubernetes_service" "plantuml" {
     port {
       name = "https"
       port        = 443
-      target_port = 8080
+      target_port = 80
       protocol = "TCP"
     }
     # port {
