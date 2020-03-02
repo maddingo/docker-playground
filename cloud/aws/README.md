@@ -1,5 +1,4 @@
-# Environment on AWS with nginx Ingress controller and NLB
-
+# Environment on AWS 
 Described in https://aws.amazon.com/blogs/opensource/network-load-balancer-nginx-ingress-controller-eks/
 
 Comparison of the different options on https://medium.com/@dmaas/amazon-eks-ingress-guide-8ec2ec940a70
