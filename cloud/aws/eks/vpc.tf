@@ -14,7 +14,7 @@ resource "aws_vpc" "cluster" {
   cidr_block = "10.0.0.0/16"
   tags = {
     Name: "EKS VPC"
-    "kubernetes.io/cluster/plantuml": "shared"
+    "kubernetes.io/cluster/${var.cluster_name}": "shared"
   }
 }
 
@@ -34,7 +34,7 @@ resource "aws_subnet" "cluster" {
 
     tags = {
       Name: "Subnet ${data.aws_availability_zones.available.names[count.index]}"
-      "kubernetes.io/cluster/plantuml": "shared"
+      "kubernetes.io/cluster/${var.cluster_name}": "shared"
       "kubernetes.io/role/elb": "1"
     }
 }

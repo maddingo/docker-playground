@@ -24,7 +24,7 @@ data "aws_eks_cluster_auth" "plantuml" {
 }
 
 resource "aws_eks_fargate_profile" "plantuml" {
-  count = 0 # As of Feb 2. 2020 fargat profiles are not supported in eu-central-1
+  count = 0 # As of Feb 2. 2020 fargate profiles are not supported in eu-central-1
   cluster_name           = aws_eks_cluster.plantuml.name
   fargate_profile_name   = "plantuml"
   pod_execution_role_arn = aws_iam_role.plantuml.arn

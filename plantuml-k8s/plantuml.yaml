@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: plantuml
-        image: plantuml/plantuml-server:tomcat
+        image: maddingo/plantuml-server
         ports:
         - containerPort: 8080
 
@@ -33,8 +33,8 @@ kind: Service
 metadata:
   name: plantuml
   namespace: plantuml
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:eu-central-1:972842949248:certificate/b1f96b78-d292-4d9f-8c92-82854f418109
+  #annotations:
+    #service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:eu-central-1:972842949248:certificate/b1f96b78-d292-4d9f-8c92-82854f418109
 spec:
   selector:
     app: plantuml
